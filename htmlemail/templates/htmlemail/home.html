@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+  
+    <title>HTML EMAIL</title>
+</head>
+<body class="h-[100vh] overflow-hidden">
+    <h1 class="text-center py-10 text-3xl uppercase text-white font-bold bg-[#1d2a35]">html email</h1>
+
+    <div class="bg-blue-300">
+        
+
+        <form action="{% url 'send_html_email' %}" method="POST" class="h-[85vh] flex-col justify-around  items-center bg-[#38444d] p-4 space-y-4">
+            {% csrf_token %}
+            
+            <textarea name="text" id="text" cols="30" rows="10" class="w-full h-[70%] bg-[#1d2a35] text-white p-4" placeholder="Enter html email code here........."></textarea>
+            
+            <div class="flex space-x-4 justify-center">
+
+                <input type="email" name="email" id="email" class="w-[25%] py-2 px-4 border text-yellow-500 font-semibold border-yellow-500 outline-none rounded-md" placeholder="Enter a email address..." required> <br>
+                <button type="submit" class="uppercase bg-blue-500 text-white py-2 px-7 drop-shadow-lg hover:scale-x-95 rounded-md font-semibold">send html mail</button>
+            </div>
+            </form>
+
+    </div>
+    
+</body>
+</html>
